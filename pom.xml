@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.guan</groupId>
+	<artifactId>langchain4j-springboot</artifactId>
+	<version>${langchain4j.springboot.version}</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>langchain-springboot-chat</module>
+	</modules>
+
+	<properties>
+		<java.version>17</java.version>
+		<langchain4j.springboot.version>1.0.0-SNAPSHOT</langchain4j.springboot.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!--	springboot 依赖		-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>3.5.7</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!--	langchain4j 依赖版本管理	-->
+			<dependency>
+				<groupId>dev.langchain4j</groupId>
+				<artifactId>langchain4j-bom</artifactId>
+				<version>1.8.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!--	langchain4j 高级功能		-->
+			<dependency>
+				<groupId>dev.langchain4j</groupId>
+				<artifactId>langchain4j-community-bom</artifactId>
+				<version>1.8.0-beta15</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>snapshots-repo</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

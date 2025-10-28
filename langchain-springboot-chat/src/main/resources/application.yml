@@ -1,0 +1,15 @@
+spring:
+    application:
+      name: langchain-springboot-chat
+
+langchain:
+  community:
+    dashcode:
+      api-key: sk-825068fffb964d92ad6e12200ff639a5
+      model-name: qwen-max
+      temperature: 0.7
+      max-tokens: 2048
+      enableSearch: true
+
+server:
+  port: 8000
